@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
@@ -39,6 +40,17 @@ object Build : BuildType({
 
     vcs {
         root(HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain)
+    }
+
+    steps {
+        script {
+            name = "create file"
+            scriptContent = """
+                echo "fiel content" > file.ext
+                ls -al
+                export
+            """.trimIndent()
+        }
     }
 
     triggers {
