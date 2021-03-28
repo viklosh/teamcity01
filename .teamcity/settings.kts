@@ -39,6 +39,8 @@ project {
 object Build : BuildType({
     name = "Build"
 
+    artifactRules = "file.ext"
+
     vcs {
         root(HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain)
     }
