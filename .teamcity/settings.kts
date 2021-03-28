@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
@@ -28,7 +29,22 @@ version = "2020.2"
 project {
 
     vcsRoot(HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain)
+
+    buildType(Build)
 }
+
+object Build : BuildType({
+    name = "Build"
+
+    vcs {
+        root(HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain)
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
 
 object HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain : GitVcsRoot({
     name = "https://github.com/viklosh/spring-petclinic.git#refs/heads/main"
