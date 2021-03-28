@@ -76,11 +76,6 @@ object Build1 : BuildType({
         }
     }
 
-    triggers {
-        vcs {
-        }
-    }
-
     dependencies {
         dependency(Build) {
             snapshot {
