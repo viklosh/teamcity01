@@ -77,6 +77,11 @@ object Build1 : BuildType({
         vcs {
         }
     }
+
+    dependencies {
+        snapshot(Build) {
+        }
+    }
 })
 
 object HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain : GitVcsRoot({
