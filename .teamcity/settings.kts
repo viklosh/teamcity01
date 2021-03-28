@@ -69,7 +69,10 @@ object Build1 : BuildType({
     steps {
         script {
             name = "cat artifact"
-            scriptContent = "cat file.ext"
+            scriptContent = """
+                ls -al
+                cat file.ext
+            """.trimIndent()
         }
     }
 
