@@ -66,6 +66,13 @@ object Build1 : BuildType({
         root(HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain)
     }
 
+    steps {
+        script {
+            name = "cat artifact"
+            scriptContent = "cat file.ext"
+        }
+    }
+
     triggers {
         vcs {
         }
