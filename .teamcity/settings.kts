@@ -31,6 +31,7 @@ project {
 
     vcsRoot(HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain)
 
+    buildType(Build1)
     buildType(Build)
 }
 
@@ -45,6 +46,19 @@ object Build : BuildType({
         maven {
             goals = "package"
         }
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
+
+object Build1 : BuildType({
+    name = "Build (1)"
+
+    vcs {
+        root(HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain)
     }
 
     triggers {
