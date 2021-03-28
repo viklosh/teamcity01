@@ -35,7 +35,7 @@ project {
 }
 
 object Build : BuildType({
-    name = "Build"
+    name = "Build app"
 
     vcs {
         root(HttpsGithubComVikloshSpringPetclinicGitRefsHeadsMain)
