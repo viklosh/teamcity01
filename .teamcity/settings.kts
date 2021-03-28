@@ -79,7 +79,13 @@ object Build1 : BuildType({
     }
 
     dependencies {
-        snapshot(Build) {
+        dependency(Build) {
+            snapshot {
+            }
+
+            artifacts {
+                artifactRules = "file.ext"
+            }
         }
     }
 })
